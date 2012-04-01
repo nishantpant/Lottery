@@ -1,0 +1,67 @@
+USERS
+id
+first_name
+last_name
+email
+--------------
+
+GROUPS
+id
+name
+description
+------------------
+
+GROUPS_USERS
+user_id
+group_id
+
+-------------------
+
+LOTTERYPOOLS
+id
+name
+description
+lottery_date
+-------------------------------
+
+LOTTERYTICKETS
+id
+lotterpool_id
+num1
+num2
+num3
+num4
+num5
+megaplier
+
+
+rails generate model user first_name:string last_name:string email:string photo_url:string
+rails generate model group name:string description:string lottery_date:timestamp owner_id:integer dollar_amount:integer
+rails generate model lotteryticket group_id:integer num1:integer num2:integer num3:integer num4:integer num5:integer megaplier:integer 
+rails g migration create_groups_users_join
+
+class Group < ActiveRecord::Base
+  has_and_belongs_to_many :users
+  has_many :lotterytickets, :class_name => 'Lotterytickets'
+end
+
+class User < ActiveRecord::Base
+  has_and_belongs_to_many :groups
+end
+
+class Lotterytickets < ActiveRecord::Base
+  belongs_to :Group
+end
+
+class CreateGroupsUsersJoin < ActiveRecord::Migration
+  def up
+    create_table 'groups_users', :id => false do |t|
+      t.column 'user_id', :integer
+      t.column 'group_id', :integer
+    end
+  end
+
+  def down
+    drop_table 'groups_users'
+  end
+end

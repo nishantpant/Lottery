@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  group_id: 1
+  num1: 1
+  num2: 1
+  num3: 1
+  num4: 1
+  num5: 1
+  megaplier: 1
+
+two:
+  group_id: 1
+  num1: 1
+  num2: 1
+  num3: 1
+  num4: 1
+  num5: 1
+  megaplier: 1

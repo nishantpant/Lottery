@@ -1,0 +1,47 @@
+<div class="article clear">
+  <h1><%= h("#{@user.first_name} #{@user.last_name}")%></h1>   
+  
+  <div  class="column span-4 last">        
+      <div class="tools">            
+          <h3>Tools</h3>
+          <%= link_to 'Edit', edit_user_path(@user) %> &middot;
+          <%= link_to 'Destroy', @user, :confirm => 'Are you sure?', 
+                                          :method => :delete %> &middot;  
+      <!-- /tools -->
+      </div>
+  <!-- /column -->        
+  </div>
+        
+<!-- /article -->
+</div>
+
+<div class="clear">
+  <div class="column span-6">
+    <div id="comments">       
+      <h2 id="comments_count"><%= pluralize(@groups.size, 'Groups') %></h2>
+      <table border="1  ">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Dollar Amount</th>
+          <th>Lottery Date</th>
+          <th>Action</th>
+        </tr>
+      <% for group in @groups %>
+        <tr>
+        <td><%=h group.name %></td>
+        <td><%=h group.description %></td>
+        <td><%=h group.dollar_amount %></td>
+        <td><%=h group.lottery_date %></td>
+        <td>
+          <%= link_to 'Show', group %>
+          <%= link_to 'Edit', edit_group_path(group) %>
+          <%= link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
