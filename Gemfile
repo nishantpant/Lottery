@@ -20,6 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'pg'
 gem 'jquery-ui-rails'
 gem 'rails-dbi', :require => 'dbi'
 gem 'ruby-odbc'
