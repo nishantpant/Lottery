@@ -25,7 +25,6 @@ gem 'rails-dbi', :require => 'dbi'
 gem 'ruby-odbc'
 gem 'activerecord-sqlserver-adapter' 
 gem 'jquery-rails'
-gem 'pg'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -41,3 +40,6 @@ gem 'pg'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+group :production do
+  gem 'pg'
+end
