@@ -1,0 +1,101 @@
+2012-04-02T01:06:20+00:00 app[web.1]: cache: [GET /user/index] miss
+2012-04-02T01:06:20+00:00 heroku[router]: GET nishantpant.heroku.com/user/index dyno=web.1 queue=0 wait=0ms service=258ms status=500 bytes=643
+2012-04-02T01:06:21+00:00 heroku[nginx]: 76.183.81.218 - - [02/Apr/2012:01:06:20 +0000] "GET /user/index HTTP/1.1" 500 643 "-" "Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0" nishantpant.heroku.com
+2012-04-02T01:06:29+00:00 app[web.1]: 
+2012-04-02T01:06:29+00:00 app[web.1]: 
+2012-04-02T01:06:29+00:00 app[web.1]: Started GET "/rails/info/properties" for 76.183.81.218 at 2012-04-01 18:06:29 -0700
+2012-04-02T01:06:29+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/rails/info/properties"):
+2012-04-02T01:06:29+00:00 app[web.1]: 
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/railties-3.2.2/lib/rails/rack/logger.rb:26:in `call_app'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/railties-3.2.2/lib/rails/rack/logger.rb:16:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/activesupport-3.2.2/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/static.rb:61:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/railties-3.2.2/lib/rails/application.rb:220:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/railties-3.2.2/lib/rails/railtie/configurable.rb:30:in `method_missing'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/railties-3.2.2/lib/rails/engine.rb:479:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:
+51:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:134:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-1.4.1/lib/rack/urlmap.rb:64:in `block in call'
+2012-04-02T01:06:29+00:00 app[web.1]:   /home/heroku_rack/lib/static_assets.rb:9:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   /home/heroku_rack/lib/last_access.rb:15:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:134:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   thin (1.2.6) lib/thin/connection.rb:76:in `block in pre_process'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-1.4.1/lib/rack/urlmap.rb:49:in `each'
+2012-04-02T01:06:29+00:00 app[web.1]:   /home/heroku_rack/lib/date_header.rb:14:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   .bundle/gems/ruby/1.9.1/gems/rack-1.4.1/lib/rack/urlmap.rb:49:in `call'
+2012-04-02T01:06:29+00:00 app[web.1]:   thin (1.2.6) lib/thin/connection.rb:74:in `catch'
+2012-04-02T01:06:29+00:00 app[web.1]:   thin (1.2.6) lib/thin/connection.rb:74:in `pre_process'
+2012-04-02T01:06:29+00:00 app[web.1]:   thin (1.2.6) lib/thin/controllers/controller.rb:80:in `start'
+2012-04-02T01:06:29+00:00 app[web.1]:   thin (1.2.6) lib/thin/runner.rb:177:in `run_command'
+2012-04-02T01:06:29+00:00 app[web.1]:   thin (1.2.6) lib/thin/connection.rb:42:in `receive_data'
+2012-04-02T01:06:29+00:00 app[web.1]:   eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+2012-04-02T01:06:29+00:00 app[web.1]:   eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+2012-04-02T01:06:29+00:00 app[web.1]:   thin (1.2.6) lib/thin/server.rb:156:in `start'
+2012-04-02T01:06:29+00:00 app[web.1]:   thin (1.2.6) lib/thin/backends/base.rb:57:in `start'
+2012-04-02T01:06:29+00:00 app[web.1]:   thin (1.2.6) lib/thin/connection.rb:57:in `process'
+2012-04-02T01:06:29+00:00 app[web.1]:   thin (1.2.6) bin/thin:6:in `<top (required)>'
+2012-04-02T01:06:29+00:00 app[web.1]:   /usr/ruby1.9.2/bin/thin:19:in `load'
+2012-04-02T01:06:29+00:00 app[web.1]:   /usr/ruby1.9.2/bin/thin:19:in `<main>'
+2012-04-02T01:06:29+00:00 app[web.1]: 
+2012-04-02T01:06:29+00:00 app[web.1]: cache: [GET /rails/info/properties] miss
+2012-04-02T01:06:29+00:00 app[web.1]: 
+2012-04-02T01:06:29+00:00 app[web.1]:   thin (1.2.6) lib/thin/runner.rb:143:in `run!'
+2012-04-02T01:06:29+00:00 heroku[router]: GET nishantpant.heroku.com/rails/info/properties dyno=web.1 queue=0 wait=0ms service=10ms status=404 bytes=728
+2012-04-02T01:06:29+00:00 heroku[nginx]: 76.183.81.218 - - [02/Apr/2012:01:06:29 +0000] "GET /rails/info/properties HTTP/1.1" 404 728 "http://nishantpant.heroku.com/" "Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0" nishantpant.heroku.com
+2012-04-02T01:06:46+00:00 app[web.1]: 
+2012-04-02T01:06:46+00:00 app[web.1]: 
+2012-04-02T01:06:46+00:00 app[web.1]: Started GET "/user/index" for 76.183.81.218 at 2012-04-01 18:06:46 -0700
+2012-04-02T01:06:46+00:00 app[web.1]: Processing by UserController#index as HTML
+2012-04-02T01:06:46+00:00 app[web.1]:   Rendered user/index.html.erb within layouts/application (0.0ms)
+2012-04-02T01:06:46+00:00 app[web.1]: Completed 500 Internal Server Error in 18ms
+2012-04-02T01:06:46+00:00 app[web.1]: 
+2012-04-02T01:06:46+00:00 app[web.1]: ActionView::Template::Error (application.js isn't precompiled):
+2012-04-02T01:06:46+00:00 app[web.1]:     2: <html>
+2012-04-02T01:06:46+00:00 app[web.1]:     3: <head>
+2012-04-02T01:06:46+00:00 app[web.1]:     4:   <title>Lottery</title>
+2012-04-02T01:06:46+00:00 app[web.1]:     5:   <%= javascript_include_tag "application" %>
+2012-04-02T01:06:46+00:00 app[web.1]:     6:   <%= csrf_meta_tags %>
+2012-04-02T01:06:46+00:00 app[web.1]:   app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___4156837102448278776_30293680'
+2012-04-02T01:06:46+00:00 app[web.1]:     7: </head>
+2012-04-02T01:06:46+00:00 app[web.1]:     8: <body>
+2012-04-02T01:06:46+00:00 app[web.1]:   app/controllers/user_controller.rb:75:in `index'
+2012-04-02T01:06:46+00:00 app[web.1]: 
+2012-04-02T01:06:46+00:00 app[web.1]: 
+2012-04-02T01:06:46+00:00 app[web.1]: cache: [GET /user/index] miss
+2012-04-02T01:06:46+00:00 heroku[router]: GET nishantpant.heroku.com/user/index dyno=web.1 queue=0 wait=0ms service=31ms status=500 bytes=643
+2012-04-02T01:06:46+00:00 heroku[nginx]: 76.183.81.218 - - [02/Apr/2012:01:06:46 +0000] "GET /user/index HTTP/1.1" 500 643 "-" "Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0" nishantpant.heroku.com
+2012-04-02T01:07:59+00:00 heroku[router]: POST nishantpant.heroku.com/_heroku/console dyno=web.1 queue=0 wait=0ms service=17ms status=200 bytes=19
+2012-04-02T01:07:59+00:00 heroku[nginx]: 107.22.7.88 - app3611282 [02/Apr/2012:01:07:59 +0000] "POST /_heroku/console?session_id=1600275&session_action=create HTTP/1.1" 200 19 "-" "-" nishantpant.heroku.com
+2012-04-02T01:09:28+00:00 app[web.1]: 
+2012-04-02T01:09:28+00:00 app[web.1]: Started GET "/user/index" for 76.183.81.218 at 2012-04-01 18:09:28 -0700
+2012-04-02T01:09:28+00:00 app[web.1]: Processing by UserController#index as HTML
+2012-04-02T01:09:28+00:00 app[web.1]: 
+2012-04-02T01:09:28+00:00 app[web.1]:   Rendered user/index.html.erb within layouts/application (0.0ms)
+2012-04-02T01:09:28+00:00 app[web.1]: Completed 500 Internal Server Error in 7ms
+2012-04-02T01:09:28+00:00 app[web.1]: 
+2012-04-02T01:09:28+00:00 app[web.1]: ActionView::Template::Error (application.js isn't precompiled):
+2012-04-02T01:09:28+00:00 app[web.1]:     3: <head>
+2012-04-02T01:09:28+00:00 app[web.1]:     2: <html>
+2012-04-02T01:09:28+00:00 app[web.1]:     4:   <title>Lottery</title>
+2012-04-02T01:09:28+00:00 app[web.1]:     5:   <%= javascript_include_tag "application" %>
+2012-04-02T01:09:28+00:00 app[web.1]:     7: </head>
+2012-04-02T01:09:28+00:00 app[web.1]:     6:   <%= csrf_meta_tags %>
+2012-04-02T01:09:28+00:00 app[web.1]:     8: <body>
+2012-04-02T01:09:28+00:00 app[web.1]:   app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___4156837102448278776_30293680'
+2012-04-02T01:09:28+00:00 app[web.1]: 
+2012-04-02T01:09:28+00:00 app[web.1]:   app/controllers/user_controller.rb:75:in `index'
+2012-04-02T01:09:28+00:00 app[web.1]: 
+2012-04-02T01:09:28+00:00 app[web.1]: cache: [GET /user/index] miss
+2012-04-02T01:09:28+00:00 heroku[router]: GET nishantpant.heroku.com/user/index dyno=web.1 queue=0 wait=0ms service=14ms status=500 bytes=643
+2012-04-02T01:09:28+00:00 heroku[nginx]: 76.183.81.218 - - [02/Apr/2012:01:09:28 +0000] "GET /user/index HTTP/1.1" 500 643 "-" "Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0" nishantpant.heroku.com
