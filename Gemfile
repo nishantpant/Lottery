@@ -26,6 +26,8 @@ gem 'ruby-odbc'
 gem 'activerecord-sqlserver-adapter' 
 gem 'jquery-rails'
 gem 'pg'
+gem 'yaml_db'
+gem 'therubyracer'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
