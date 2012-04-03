@@ -1,12 +1,617 @@
-/* 
-    Document   : custom
-    Created on : Mar 31, 2012, 4:37:21 PM
-    Author     : npant
-    Description:
-        Purpose of the stylesheet follows.
+or /*   
+Theme Name: ChubbyGrub
+Description: Custom WordPress Theme for ChubbyGrub.com
+Author: Trailer Park Media, LLC
+Author URI: http://trailerparkmedia.com
 */
 
-root { 
-    display: block;
+/******************
+Global Styles
+******************/
+body {
+	font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+	background-image: url(bg_body.png);
+	background-position: 0 0;
+	background-repeat: repeat-x;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+  list-style-type: none;
+}
+
+img {border: 0;}
+
+a {
+	color: #0078AA;
+}
+
+a:hover {
+	color: #fff;
+	background-color: #0078AA;
+	text-decoration: none;
+}
+
+section,
+nav,
+footer,
+header {
+  display: block;
+}
+
+.right {float: right;}
+
+.left {float:left;}
+
+.clear {clear:both;}
+
+.clear_right {clear: right;}
+
+.text_right {text-align: right;}
+
+/******************
+Image Replacement
+******************/
+.image_replace {
+	display: block;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+}
+
+.image_replace_anchor {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+.image_replace_anchor a {
+	display: block;
+	text-indent: -9999px;
+	outline: none;
+}
+
+.image_replace_anchor a:hover {
+	background-color: transparent;
+}
+
+#logo_chubbygrub {
+  width: 210px;
+  height: 50px;
+  line-height: 50px;
+  float: left;
+  padding: 8px 0px 0px 40px;
+}
+
+#logo_chubbygrub a {
+  width: 210px;
+  height: 50px;
+  line-height: 50px;
+  background-image: url(logo_chubbygrub.png);
+}
+
+/******************
+Wrapper Styles
+******************/
+#wrapper {
+	width: 955px;
+	margin: 0 auto;
+}
+
+.tax-restaurants #wrapper,
+.tax-categories #wrapper,
+.post-type-archive-food #wrapper,
+.search-results #wrapper {
+	background-color: #fff;
+}
+
+/******************
+Header Styles
+******************/
+#header {
+	height: 60px;
+	background-color: #2AA8E3;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2AA8E3), to(#0071BD));
+  background-image: -moz-linear-gradient(top,  #2AA8E3,  #0071BD);
+  background-image: linear-gradient(top, #2AA8E3, #0071BD);
+  border: 1px solid #0071BD;
+  border-bottom-left-radius: 15px;
+  -moz-border-radius-bottomleft: 15px;
+  border-bottom-right-radius: 15px;
+  -moz-border-radius-bottomright: 15px;
+}
+
+/******************
+Navigation Styles
+******************/
+#navigation {
+	float: right;
+	padding: 10px 40px 0 0px;
+	font-family: "Love Ya Like A Sister", Georgia;
+}
+
+#navigation ul {
+	float: left;
+	height: 40px;
+}
+
+#navigation ul li {
+	float: left;
+	border-left: 1px solid #51B3DA;
+	border-right: 1px solid #0872AC;
+}
+
+#navigation ul li.first {
+  border-left: none;
+}
+
+#navigation ul li.last {
+  border-right: none;
+}
+
+#navigation ul li a {
+	color: #fff;
+	display: inline-block;
+	font-size: 19px;
+	line-height: 40px;
+	height: 40px;
+	text-decoration: none;
+	padding: 0 40px;
+	border-left: 1px solid #2DA1D9;
+}
+
+#navigation ul li.first a {
+  border-left: none;
+}
+
+#navigation ul li.last a {
+  padding-right: 0;
+}
+
+#navigation ul li a:hover {
+	text-decoration: underline;
+	background-color: transparent;
+	color: #fff;
+}
+
+/******************
+Share Icon Styles
+******************/
+#share_icons {
+  position: fixed;
+  left: 20px;
+  top: 30px;
+  width: 75px;
+}
+
+#share_icons span.st_twitter_vcount, 
+#share_icons span.st_facebook_vcount,
+#share_icons span.st_email_vcount,
+#share_icons .db-wrapper {
+  display: block;
+  margin: 0px auto 5px auto !important;
+  text-align: center;
+}
+
+#share_icons .db-wrapper {
+  margin: 0px auto 5px auto !important;
+}
+
+/******************
+Content Styles
+******************/
+#content {
+	background-image: url(bg_content_main.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	color: #808080;
+	width: 100%;
+	overflow: hidden;
+}
+
+#content_header {
+  height: 200px;
+	width: 594px;
+	padding: 50px 0 0 310px;
+}
+
+#content_header h2,h3 {
+  font-size: 45px;
+  color: #FBB03B !important;
+  font-weight: bold;
+}
+
+#content_copy {
+	padding: 35px 65px 30px 55px;
+	clear: both;
+}
+
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+  color: #333;
+  font-family: "Love Ya Like A Sister", Georgia;
+}
+
+#content h3 {
+  font-size: 30px;
+  line-height: 35px;
+  font-weight: normal;
+}
+
+#content_copy dl {
+  margin-top: 20px;
+}
+
+#content_copy dt {
+  float: left;
+  color: #333;
+  font-family: "Love Ya Like A Sister", Georgia;
+  clear: left;
+  width: 150px;
+  padding-bottom: 10px;
+}
+
+#content_copy dd {
+  float: left;
+  width: 150px;
+  padding-bottom: 10px;
+}
+
+#content_copy ol {
+  margin-left: 20px;
+}
+
+#content_copy ol li {
+  list-style: decimal;
+}
+
+#content p {
+	line-height: 27px;
+	padding: 10px 0;
+}
+
+#awning {
+	width: 375px;
+	height: 195px;
+	padding: 120px 75px 0 75px;
+	margin: 0 -50px 50px 0;
+	background-image: url(bg_awning.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	color: #C66D24;
+	float: right;
+}
+
+#awning h3 {
+	color: #C66D24;
+	text-align: center;
+}
+
+#awning p {
+	width: 337px;
+	margin: 0px auto;
+	padding: 15px 0px 20px 0px;
+}
+
+#left {
+	float: left;
+	width: 345px;
+}
+
+#right {
+	float: right;
+	width: 395px;
+}
+
+/******************
+Search Styles
+******************/
+#awning form {
+  text-align: center;
+}
+
+input.field,
+input.string {
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  font-family: "Love Ya Like A Sister", Georgia;
+  display: inline-block;
+  width: 200px;
+  text-align: left;
+  padding: 0px 0px 0px 10px;
+  vertical-align: top;
+}
+
+.hint {
+  color: #999;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.error {
+  color: red;
+}
+
+input#keywords {
+  margin: 0px 10px 0px 20px;
+}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/******************
+Button Styles
+******************/
+.button {
+  display: inline-block;
+  height: 49px;
+  line-height: 49px;
+  font-size: 16px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#EB1C24), to(#C2272D));
+  background-image: -moz-linear-gradient(top, #EB1C24, #C2272D);
+  background-image: linear-gradient(top, #EB1C24, #C2272D);
+  color: #fff;
+  font-family: "Love Ya Like A Sister", Georgia;
+  text-decoration: none;
+  padding: 0px 20px;
+  border: 4px solid #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+/******************
+Table Content Styles
+******************/
+.tax-restaurants #content,
+.tax-categories #content,
+.post-type-archive-food #content,
+.search-results #content {
+  background: none;
+}
+
+.tax-restaurants #content #content_header,
+.tax-categories #content #content_header,
+.post-type-archive-food #content #content_header,
+.search-results #content #content_header {
+	padding: 25px 50px;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+
+.tax-restaurants #content #content_header h1,
+.tax-categories #content #content_header h1,
+.post-type-archive-food #content #content_header h1,
+.search-results #content #content_header h1 {
+	float: left;
+	width: 400px;
+	height: 170px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	font-style: italic;
+	font-size: 30px;
+	line-height: 35px;
+	text-align: center;
+	padding: 50px 0 0 0;
+	color: #C66D24;
+	border-right: 1px dashed #ccc;
+}
+
+#table_callout {
+	float: right;
+	width: 345px;
+	border-left: 1px dashed #ccc;
+	padding-left: 70px;
+}
+
+.tax-restaurants #content #content_copy,
+.tax-categories #content #content_copy,
+.post-type-archive-food #content #content_copy,
+.search-results #content #content_copy {
+	padding: 0 25px 30px 25px;
+}
+
+/******************
+Ads Styles
+******************/
+#table_ads {
+  float: right;
+}
+
+/******************
+Pagination Styles
+******************/
+#pagination {
+  padding: 10px 0px;
+}
+
+/******************
+Food Items Styles
+******************/
+#items {
+	border: 1px dashed #ccc;
+	border-bottom: none;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#items tr th {
+	background-color: #67AAD7;
+	text-align: left;
+	border-right: 1px dashed #63AED3;
+	padding: 15px 10px;
+	color: #fff;
+	text-decoration: underline;
+	background-image: -moz-linear-gradient(top, #7ECBED, #67AAD7);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#7ECBED), to(#67AAD7));
+  background-image: linear-gradient(top, #7ECBED, #67AAD7);
+}
+
+#items tr th:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#items tr th.current-menu-item {
+	background-image: url(bg_table_th_ascending.gif);
+	background-position: center 0;
+	background-repeat: no-repeat;
+}
+
+#items tr th.current-menu-item.descending {
+	background-image: url(bg_table_th_descending.gif);
+	background-position: center 0;
+	background-repeat: no-repeat;
+}
+
+#items tr td {
+	border-bottom: 1px dashed #ccc;
+	border-right: 1px dashed #ccc;
+	padding: 10px;
+}
+
+#items tr td a {
+	color: #D76E08;
+}
+
+#items tr td a:hover {
+	background-color: #D76E08;
+	color: #fff;
+}
+
+#items tbody tr:nth-of-type(odd) td {
+	background-color: #FFF6D6;
+}
+
+#items tbody tr:nth-of-type(even) td {
+	background-color: #F3FFFE;
+}
+
+/******************
+Restaurant/Category List
+******************/
+#content nav ul {
+	padding: 0px 0px 70px 0px;
+	font-style: italic;
+	text-align: center;
+}
+
+#content nav ul li {
+	display: inline;
+	padding: 15px 20px;
+	line-height: 30px;
+	font-size: 25px;
+}
+
+#content nav ul li:nth-of-type(odd) a {
+	color: #D76E08;
+}
+
+#content nav ul li:nth-of-type(odd) a:hover {
+	background-color: #D76E08;
+	color: #fff;
+}
+
+/******************
+Footer Styles
+******************/
+#footer {
+	background-image: url(bg_footer_repeat.png);
+	background-position: 0 80px;
+	background-repeat: repeat-x;
+}
+
+#footer footer {
+	font-size: 15px;
+	color: #4d4d4d;
+	width: 955px;
+	margin: 0 auto;
+	padding: 110px 0 0 0;
+	min-height: 175px;
+	background-position: right 0;
+	background-repeat: no-repeat;
+}
+
+#footer a {
+	color: #4d4d4d;
+	text-decoration: underline;
+}
+
+#footer a:hover {
+	color: #4d4d4d;
+	background: none;
+	text-decoration: none;
+}
+
+#footer nav ul li {
+	display: inline;
+	padding-right: 35px;
+	font-family: "Love Ya Like A Sister", Georgia;
+}
+
+#footer nav ul li a {
+	color: #4d4d4d;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#footer nav ul li a:hover {
+	text-decoration: underline;
+}
+
+#copyright {
+	padding: 100px 0 0 0;
+	clear: both;
+}
+
+/******************
+WordPress Styles
+******************/
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.wp-caption {
+	background-color: #f3f3f3;
+	border: 1px solid #ddd;
+	-khtml-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px; 
+	margin: 10px;
+	padding-top: 4px;
+	text-align: center;
+}
+
+.wp-caption img {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	margin: 0 !important;
+	padding: 0 4px 5px !important;
 }
 

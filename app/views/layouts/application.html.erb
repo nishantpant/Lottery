@@ -4,18 +4,90 @@
   <title>Lottery</title>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "custom" %>
 </head>
-<body>
-    <div class="container">
-      <header>
-        <nav class="round">
-          <ul>
-            <li><%= link_to "Home", '#' %> </li>
-            <li><%= link_to "Lottery Pools", '#' %> </li>
-            <li><%= link_to "My Account", '#' %> </li>
+
+<body class="home page page-id-9 page-template-default">
+<div id="fb-root"></div>
+       
+<section id="wrapper">
+  <header id="header"> 
+    <h2 id="logo_chubbygrub" class="image_replace_anchor"> 
+      <a href="/">IncreaseMyOdds</a>
+    </h2> 
+
+    <nav id="navigation" role="navigation"> 
+      <div class="menu-main-navigation-container">
+          <ul id="menu-main-navigation" class="menu">
+            <li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9 current_page_item menu-item-11"><a href="/">Home</a></li>
+            <li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12">
+                    <a href="/group/index">Pools</a>
+            </li>
+            <li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13">
+                <a href="/user/index">Members</a>
+            </li>
+            <li id="menu-item-951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-951">
+                <a href="/user/index">My Account</a>
+            </li>
           </ul>
-        </nav>
-      </header>
-      <%= yield %>
+      </div>    
+    </nav> 
+  </header>
+  <section id="content"> 
+    <header id="content_header">
+      <section id="page_ads">			
+        <div class="textwidget">
+          <h2>Lottery Pools done right!</h2>
+            <div class="fb-like" data-href="http://chubbygrub.com/" data-send="true" data-width="350" data-show-faces="false">  
+            </div>
+        </div>
+      </section> 
+    </header><!--// #content_header --> 
+    <%= yield %>
+  </section><!--// #content -->
+ </section><!--// #wrapper -->
+
+<section id="footer"> 
+  <footer> 
+    <nav role="navigation"> 
+      <div class="menu-main-navigation-container"><ul id="menu-main-navigation-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9 current_page_item menu-item-11"><a href="http://chubbygrub.com/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12"><a href="http://chubbygrub.com/categories/">Categories</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13"><a href="http://chubbygrub.com/restaurants/">Restaurants</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-951"><a href="http://chubbygrub.com/search/">Search</a></li>
+</ul></div>    </nav> 
+
+    <section id="copyright"> 
+      Copyright, LotteryPool. All rights reserved. A <a href="http://lotterypool.com" target="_blank">Lottery Pool LLC</a> production. 
+    </section><!--// #copyright --> 
+  </footer> 
+</section><!--// #footer -->
+
+<img src="http://chubbygrub.com/wp-content/themes/chubbygrub/images/screenshot.png" width="1240" height="633" alt="" style="display: none;">
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18489272-5']);
+  if(typeof(_vis_opt_GA_track) == "function") { _vis_opt_GA_track(); }
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script type="text/javascript">
+  var uvOptions = {};
+  (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/MSut4xiiltFE4E7ZPSn6ZQ.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+  })();
+</script>
+
 </body>
 </html>

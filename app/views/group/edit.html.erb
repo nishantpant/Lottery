@@ -1,58 +1,80 @@
-<h1>Editing Group</h1>
-
-<%= form_for(@group) do |f| %>
-  <% if @group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
-
-      <ul>
-      <% @group.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :'Name' %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :'Description' %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :'Lottery Date' %><br />
-    <%= f.text_field :lottery_date %>
-  </div>
-  <div class="field">
-    <%= f.label :'Dollar Amount' %><br />
-    <%= f.text_field :dollar_amount %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Show', @group %> |
-<%= link_to 'Back', group_path %>
-
-<h2>Group Members</h2>
-  <table border="1">
+<div style="padding: 40px 150px;">
+  <table>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Action</th>
+      <td>
+        <h1>Editing Group</h1>
+      </td>
+      <td>
+        <h1>Group Members</h1>
+      </td>
     </tr>
-    <% for user in @users %>
     <tr>
-        <td><%= link_to h("#{user.first_name} #{user.last_name}"), user %></td>
-        <td><%= user.email %></td>
-        <td>
-          <%= link_to 'Show', user %>
-          <%= link_to 'Edit', edit_user_path(user) %>
-        </td>
+      <td style="padding-right:60px">
+        <%= form_for(@group) do |f| %>
+          <% if @group.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+              <ul>
+              <% @group.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :'Name' %><br />
+            <%= f.text_field :name, :class => 'field' %>
+          </div>
+          <div class="field">
+            <%= f.label :'Description' %><br />
+            <%= f.text_field :description, :class => 'field' %>
+          </div>
+          <div class="field">
+            <%= f.label :'Lottery Date' %><br />
+            <%= f.text_field :lottery_date, :class => 'field' %>
+          </div>
+          <div class="field">
+            <%= f.label :'Dollar Amount' %><br />
+            <%= f.text_field :dollar_amount, :class => 'field' %>
+          </div>
+          <br>
+          <div class="actions">
+            <%= f.submit 'Save', :class => 'button' %>
+          </div>
+        <% end %>
+      </td>
+      <td valign="top">
+        <br>
+        <table id="items" border="0">
+        <thead>
+          <tr>
+            <th class="ascending" data-sort="data-name">Name</th>
+            <th data-sort="data-restaurant">Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for user in @users %>
+          <tr class="sortable_row" data-restaurant="red-robin-gourmet-burgers" data-name="Crispy Chicken Tender Salad" data-calories="1450" data-fat="97" data-carbs="86">
+              <td><%= link_to h("#{user.first_name} #{user.last_name}"), user %></td>
+              <td><%= user.email %></td>
+              <td>
+                <%= link_to 'Show', user %>
+                <%= link_to 'Edit', edit_user_path(user) %>
+              </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+     </td>
     </tr>
-    <% end %>
+    <tr>
+      <td colspan="2">
+        <%= link_to 'Show', @group %> |
+        <%= link_to 'Back', group_path %>
+      </td>
+    </tr>
   </table>
+</div>

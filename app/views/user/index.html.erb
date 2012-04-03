@@ -1,6 +1,19 @@
-    <h2> Users </h2>
-    <ul>
+<div style="padding: 20px 80px;">
+  <h2> Users </h2>
+    <table border="0" id="items">
+      <thead>
+        <tr>
+          <th>Name</th>          
+          <th>Email</th>          
+        </tr>
+      </thead>
+      <tbody>
       <% for user in @users %>
-          <li><%= link_to h("#{user.first_name} #{user.last_name}"), user %></li>
+        <tr>
+          <td><%= link_to h("#{user.first_name} #{user.last_name}"), user %></td>
+          <td><%= user.email %></td>
+        </tr>
       <% end %>
-    </ul>
+      </tbody>
+    </table>
+</div>

@@ -1,241 +1,146 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Ruby on Rails: Welcome aboard</title>
-    <style type="text/css" media="screen">
-      body {
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# chubbygrub: http://ogp.me/ns/fb/chubbygrub#">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
+  <title>IncreaseMyOdds.com | Lottery pools done right !</title>
+  
+  <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/assets/custom.css" media="screen">
+  
+  <script src="http://chubbygrub.com/wp-content/themes/chubbygrub/js/modernizr.js"></script>
+  <script src="http://chubbygrub.com/wp-content/themes/chubbygrub/js/jquery.min.js"></script>
+  <script src="http://chubbygrub.com/wp-content/themes/chubbygrub/js/plugins.js"></script>
+  <script src="http://chubbygrub.com/wp-content/themes/chubbygrub/js/scripts.js"></script>
 
-      a  {color: #03c}
-      a:hover {
-        background-color: #03c;
-        color: white;
-        text-decoration: none;
-      }
+  
+<body class="home page page-id-9 page-template-default">
+<div id="fb-root"></div>
+       
+<section id="wrapper">
+  <header id="header"> 
+    <h2 id="logo_chubbygrub" class="image_replace_anchor"> 
+      <a href="http://chubbygrub.com">IncreaseMyOdds</a>
+    </h2> 
 
-
-      #page {
-        background-color: #f0f0f0;
-        width: 750px;
-        margin: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      #content {
-        float: left;
-        background-color: white;
-        border: 3px solid #aaa;
-        border-top: none;
-        padding: 25px;
-        width: 500px;
-      }
-
-      #sidebar {
-        float: right;
-        width: 175px;
-      }
-
-      #footer {
-        clear: both;
-      }
-
-      #header, #about, #getting-started {
-        padding-left: 75px;
-        padding-right: 30px;
-      }
-
-
-      #header {
-        background-image: url("assets/rails.png");
-        background-repeat: no-repeat;
-        background-position: top left;
-        height: 64px;
-      }
-      #header h1, #header h2 {margin: 0}
-      #header h2 {
-        color: #888;
-        font-weight: normal;
-        font-size: 16px;
-      }
-
-
-      #about h3 {
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-
-      #about-content {
-        background-color: #ffd;
-        border: 1px solid #fc0;
-        margin-left: -55px;
-        margin-right: -10px;
-      }
-      #about-content table {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 11px;
-        border-collapse: collapse;
-      }
-      #about-content td {
-        padding: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-      #about-content td.name  {color: #555}
-      #about-content td.value {color: #000}
-
-      #about-content ul {
-        padding: 0;
-        list-style-type: none;
-      }
-
-      #about-content.failure {
-        background-color: #fcc;
-        border: 1px solid #f00;
-      }
-      #about-content.failure p {
-        margin: 0;
-        padding: 10px;
-      }
-
-
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-
-
-      #sidebar ul {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #sidebar ul h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-      #sidebar li {
-        list-style-type: none;
-      }
-      #sidebar ul.links li {
-        margin-bottom: 5px;
-      }
-
-      .filename {
-        font-style: italic;
-      }
-    </style>
-    <script type="text/javascript">
-      function about() {
-        info = document.getElementById('about-content');
-        if (window.XMLHttpRequest)
-          { xhr = new XMLHttpRequest(); }
-        else
-          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
-        xhr.open("GET","rails/info/properties",false);
-        xhr.send("");
-        info.innerHTML = xhr.responseText;
-        info.style.display = 'block'
-      }
-    </script>
-  </head>
-  <body>
-    <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://www.ruby-doc.org/core/">Ruby core</a></li>
-              <li><a href="http://www.ruby-doc.org/stdlib/">Ruby standard library</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
-      <div id="content">
-        <div id="header">
-          <h1>Welcome aboard</h1>
-          <h2>You&rsquo;re riding Ruby on Rails!</h2>
-        </div>
-
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
-
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
-
-          <ol>
-            <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
+    <nav id="navigation" role="navigation"> 
+      <div class="menu-main-navigation-container">
+          <ul id="menu-main-navigation" class="menu">
+            <li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9 current_page_item menu-item-11"><a href="http://chubbygrub.com/">Home</a></li>
+            <li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12">
+                    <a href="/group/index">Pools</a>
             </li>
-
-            <li>
-              <h2>Set up a default route and remove <span class="filename">public/index.html</span></h2>
-              <p>Routes are set up in <span class="filename">config/routes.rb</span>.</p>
+            <li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13">
+                <a href="/user/index">Members</a>
             </li>
-
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <code>rake db:create</code> to create your database. If you're not using SQLite (the default), edit <span class="filename">config/database.yml</span> with your username and password.</p>
+            <li id="menu-item-951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-951">
+                <a href="/user/index">My Account</a>
             </li>
-          </ol>
-        </div>
-      </div>
+          </ul>
+      </div>    
+    </nav> 
+  </header>
+<section id="content"> 
+  <header id="content_header">
+    <section id="page_ads">			<div class="textwidget"><h2>Lottery Pools. Done Right!</h2>
 
-      <div id="footer">&nbsp;</div>
-    </div>
-  </body>
+<div class="fb-like" data-href="http://chubbygrub.com/" data-send="true" data-width="350" data-show-faces="false"></div></div>
+		</section> 
+  </header><!--// #content_header --> 
+ 
+  <section id="content_copy"> 
+    <article> 
+              
+        <header> 
+          <h3>Manage your Office Lottery Pool - Free!</h3> 
+        </header> 
+        
+        <p style="text-align: center;">
+            <a class="button" title="Active Pools" href="/group/index">View currently active Pools</a> or 
+            <a class="button" title="User List" href="/group/index">Past Winners</a>
+        </p>
+<p>Recent Activity</p>
+<table id="items" border="0">
+<thead>
+<tr>
+<th class="ascending" data-sort="data-name">Pool Name</th>
+<th data-sort="data-restaurant">Lottery Date</th>
+<th class="current-menu-item descending" data-sort="data-calories">Members</th>
+<th data-sort="data-fat">Money</th>
+<th data-sort="data-fat">Purchasing Power</th>
+<th data-sort="data-fat">Odds!</th>
+</tr>
+</thead>
+<tbody>
+<tr class="sortable_row" data-restaurant="red-robin-gourmet-burgers" data-name="Crispy Chicken Tender Salad" data-calories="1450" data-fat="97" data-carbs="86">
+    <td>HDVEST IT Apr 2012 Pool</td>
+    <td>04/20/2012</td>
+    <td>97</td>
+    <td>$480</td>
+    <td>$240 Tickets</td>
+    <td>1 in 600,000,000</td>
+</tr>
+<tr class="sortable_row" data-restaurant="red-robin-gourmet-burgers" data-name="Crispy Chicken Tender Salad" data-calories="1450" data-fat="97" data-carbs="86">
+    <td>HDVEST MailRoom May 2012 Pool</td>
+    <td>05/20/2012</td>
+    <td>150</td>
+    <td>$780</td>
+    <td>$390 Tickets</td>
+    <td>1 in 500,770,001</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section><!--// #content_copy --> 
+</section><!--// #content -->
+
+</section><!--// #wrapper -->
+
+<section id="footer"> 
+  <footer> 
+    <nav role="navigation"> 
+      <div class="menu-main-navigation-container"><ul id="menu-main-navigation-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9 current_page_item menu-item-11"><a href="http://chubbygrub.com/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12"><a href="http://chubbygrub.com/categories/">Categories</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13"><a href="http://chubbygrub.com/restaurants/">Restaurants</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-951"><a href="http://chubbygrub.com/search/">Search</a></li>
+</ul></div>    </nav> 
+
+    <section id="copyright"> 
+      Copyright, LotteryPool. All rights reserved. A <a href="http://lotterypool.com" target="_blank">Lottery Pool LLC</a> production. 
+    </section><!--// #copyright --> 
+  </footer> 
+</section><!--// #footer -->
+
+<img src="http://chubbygrub.com/wp-content/themes/chubbygrub/images/screenshot.png" width="1240" height="633" alt="" style="display: none;">
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18489272-5']);
+  if(typeof(_vis_opt_GA_track) == "function") { _vis_opt_GA_track(); }
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script type="text/javascript">
+  var uvOptions = {};
+  (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/MSut4xiiltFE4E7ZPSn6ZQ.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+  })();
+</script>
+
+</body>
 </html>

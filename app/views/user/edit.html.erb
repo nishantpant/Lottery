@@ -1,35 +1,79 @@
-<h1>Editing User</h1>
+<div style="padding: 40px 120px;">
+  <table>
+    <tr>
+      <td>
+        <h1>Editing User</h1>
+      </td>
+      <td>
+        <h1>Group Memberships</h1>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding-right:20px">
+        <%= form_for(@user) do |f| %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+              <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :'First Name' %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :'Last Name' %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :'Email' %><br />
-    <%= f.text_field :email %>
-  </div>
-<br>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', user_path %>
+          <div class="field">
+            <%= f.label :'First Name' %><br />
+            <%= f.text_field :first_name, :class => 'field' %>
+          </div>
+          <div class="field">
+            <%= f.label :'Last Name' %><br />
+            <%= f.text_field :last_name, :class => 'field' %>
+          </div>
+          <div class="field">
+            <%= f.label :'Email' %><br />
+            <%= f.text_field :email, :class => 'field' %>
+          </div>
+        <br>
+          <div class="actions" >
+            <%= f.submit 'Save', :class => 'button' %>
+          </div>
+        <% end %>
+      </td>
+      </td>
+      <td valign="top">
+        <br>
+        <table id="items" border="0">
+        <thead>
+          <tr>
+            <th class="ascending" data-sort="data-name">Group Name</th>
+            <th data-sort="data-restaurant">Lottery Date</th>
+            <th data-sort="data-calories">$ Amount</th>
+            <th data-sort="data-restaurant">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for group in @groups %>
+          <tr class="sortable_row" data-restaurant="red-robin-gourmet-burgers" data-name="Crispy Chicken Tender Salad" data-calories="1450" data-fat="97" data-carbs="86">
+              <td><%= link_to group.name, group %></td>
+              <td><%= group.lottery_date %></td>
+              <td><%= group.dollar_amount %></td>
+              <td>
+                <%= link_to 'Show', group %>
+                <%= link_to 'Edit', edit_group_path(group) %>
+              </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+     </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= link_to 'Show', @user %> |
+        <%= link_to 'Back', user_path %>
+      </td>
+    </tr>
+  </table>
+</div>
