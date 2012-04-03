@@ -29,6 +29,7 @@ Lottery::Application.routes.draw do
 
   get "user/index"
 
+  resources :lotteryticket
   resources :group
   resources :user do
     resources :groups

@@ -49,7 +49,7 @@
           <tr>
             <th class="ascending" data-sort="data-name">Group Name</th>
             <th data-sort="data-restaurant">Lottery Date</th>
-            <th data-sort="data-calories">$ Amount</th>
+            <th data-sort="data-calories">$Amount</th>
             <th data-sort="data-restaurant">Action</th>
           </tr>
         </thead>
@@ -57,7 +57,7 @@
           <% for group in @groups %>
           <tr class="sortable_row" data-restaurant="red-robin-gourmet-burgers" data-name="Crispy Chicken Tender Salad" data-calories="1450" data-fat="97" data-carbs="86">
               <td><%= link_to group.name, group %></td>
-              <td><%= group.lottery_date %></td>
+              <td><%= group.lottery_date.to_s() %></td>
               <td><%= group.dollar_amount %></td>
               <td>
                 <%= link_to 'Show', group %>

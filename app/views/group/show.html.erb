@@ -1,2 +1,35 @@
-<h1>Group#show</h1>
-<p>Find me in app/views/group/show.html.erb</p>
+<div style="padding: 20px 80px;">
+  <h1>Pool: <%= h(@group.name)%></h1>   
+  <div  class="column span-4 last">        
+      <div class="tools">            
+          <%= link_to 'Edit', edit_group_path(@group) %> &middot;
+          <%= link_to 'Delete', @group, :confirm => 'Are you sure?',:method => :delete %> &middot;  
+          <br><br><br>
+      </div>
+    <h4>Pool Memberships</h4>
+    <br>
+      <table id="items" border="0">
+        <thead>
+          <tr>
+            <th class="ascending" data-sort="data-name">Name</th>
+            <th data-sort="data-restaurant">Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for user in @users %>
+          <tr class="sortable_row" data-restaurant="red-robin-gourmet-burgers" data-name="Crispy Chicken Tender Salad" data-calories="1450" data-fat="97" data-carbs="86">
+              <td><%= link_to h("#{user.first_name} #{user.last_name}"), user %></td>
+              <td><%= user.email %></td>
+              <td>
+                <%= link_to 'Show', user %>
+                <%= link_to 'Edit', edit_user_path(user) %>
+              </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>
+
+

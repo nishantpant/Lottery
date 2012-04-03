@@ -1,7 +1,7 @@
 class GroupController < ApplicationController
   def show
     @group = Group.find(params[:id])
-    @groups = @Group.groups
+    @users = @group.users.all
 
     respond_to do |format|
       format.html # show.html.erb
