@@ -27,7 +27,10 @@ gem 'activerecord-sqlserver-adapter'
 gem 'jquery-rails'
 gem 'pg'
 gem 'yaml_db'
-gem 'therubyracer'
+
+group :production do
+  gem 'therubyracer-heroku', :platform => :ruby
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
