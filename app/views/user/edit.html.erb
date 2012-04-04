@@ -47,6 +47,7 @@
         <table id="items" border="0">
         <thead>
           <tr>
+            <th></th>
             <th class="ascending" data-sort="data-name">Group Name</th>
             <th data-sort="data-restaurant">Lottery Date</th>
             <th data-sort="data-calories">$Amount</th>
@@ -56,6 +57,7 @@
         <tbody>
           <% for group in @groups %>
           <tr class="sortable_row" data-restaurant="red-robin-gourmet-burgers" data-name="Crispy Chicken Tender Salad" data-calories="1450" data-fat="97" data-carbs="86">
+              <td><%= check_box("puppy", "gooddog", {}, "yes", "no")   %>
               <td><%= link_to group.name, group %></td>
               <td><%= group.lottery_date.to_s() %></td>
               <td><%= group.dollar_amount %></td>
