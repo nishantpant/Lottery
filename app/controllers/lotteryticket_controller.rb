@@ -72,10 +72,29 @@ class LotteryticketController < ApplicationController
 
   def index
     @lotterytickets = Lotteryticket.all
-
+    @lottoRSS = getLottoRss
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @lotterytickets }
     end
+  end
+  
+  def getLottoRss
+      require 'rubygems'
+      require 'feed_tools'
+      feed = FeedTools::Feed.open('http://www.slashdot.org/index.rss')
+
+      puts feed.title
+      puts feed.link
+      puts feed.description
+
+      for item in feed.items
+        puts item.title
+        puts item.link
+        puts item.content
+      end
+      
+      return feed
   end
 end
