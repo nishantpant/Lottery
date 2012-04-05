@@ -12,7 +12,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
-  #gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'rails', '3.2.2'
