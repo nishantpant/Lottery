@@ -16,6 +16,7 @@ group :assets do
 end
 
 gem 'execjs'
+gem 'therubyracer'
 gem 'rails', '3.2.2'
 gem 'sqlite3'
 gem 'json'
