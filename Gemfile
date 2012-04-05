@@ -13,6 +13,7 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'execjs'
 end
 
 gem 'rails', '3.2.2'
@@ -25,7 +26,6 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'yaml_db'
 gem 'feedzirra'
-gem 'execjs'
 
 group :production do
 #  gem 'therubyracer-heroku'
