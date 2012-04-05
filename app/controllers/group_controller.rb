@@ -2,6 +2,7 @@ class GroupController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @users = @group.users.all
+    @rss = getLottoRss
 
     respond_to do |format|
       format.html # show.html.erb
@@ -77,5 +78,17 @@ class GroupController < ApplicationController
       format.html # index.html.erb
       format.json { render :json => @groups }
     end
+  end
+  
+  def getLottoRss
+    require 'feedzirra'
+    feed = Feedzirra::Feed.fetch_and_parse("http://www.txlottery.org/export/sites/lottery/rss/tlc_latest.xml")
+    feed.entries.each do |entry|  
+      if(entry.url == 'http://www.txlottery.org/export/sites/default/Games/Mega_Millions/' && 
+            entry.title.index("Mega Millions Winning Numbers for") != nil)
+        return entry
+      end  
+    end  
+
   end
 end

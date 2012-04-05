@@ -1,4 +1,4 @@
-<div style="padding: 40px 120px;">
+<div style="padding: 20px 80px;">
   <table>
     <tr>
       <td>
@@ -13,7 +13,8 @@
             <th class="ascending" data-sort="data-name">Group Name</th>
             <th data-sort="data-restaurant">Lottery Date</th>
             <th data-sort="data-calories">Members</th>
-            <th data-sort="data-calories">$ Amount</th>
+            <th data-sort="data-calories">Min Amount</th>
+            <th data-sort="data-calories"># Tickets</th>
             <th data-sort="data-restaurant">Action</th>
           </tr>
         </thead>
@@ -23,7 +24,8 @@
               <td><%= link_to group.name, group %></td>
               <td><%= group.lottery_date %></td>
               <td><%= group.users.count %></td>
-              <td><%= group.dollar_amount %></td>
+              <td>$<%= group.dollar_amount %></td>
+              <td><%= group.lotterytickets.count %></td>
               <td>
                 <%= link_to 'Show', group %>
                 <%= link_to 'Edit', edit_group_path(group) %>
