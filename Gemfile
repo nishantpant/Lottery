@@ -13,12 +13,12 @@ gem 'json'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  #gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
-  gem 'uglifier', '>= 1.0.3'
+  #gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-ui-rails'
@@ -31,7 +31,7 @@ gem 'yaml_db'
 gem 'feedzirra'
 
 group :production do
-  gem 'therubyracer-heroku', '0.8.1.pre3' 
+#  gem 'therubyracer-heroku'
 end
 
 # To use ActiveModel has_secure_password
