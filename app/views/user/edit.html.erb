@@ -1,4 +1,4 @@
-<div style="padding: 40px 120px;">
+<div style="padding: 40px 80px;">
   <table>
     <tr>
       <td>
@@ -50,17 +50,23 @@
             <th></th>
             <th class="ascending" data-sort="data-name">Group Name</th>
             <th data-sort="data-restaurant">Lottery Date</th>
-            <th data-sort="data-calories">$Amount</th>
+            <th data-sort="data-calories">Min Amount</th>
             <th data-sort="data-restaurant">Action</th>
           </tr>
         </thead>
         <tbody>
           <% for group in @groups %>
           <tr class="sortable_row" data-restaurant="red-robin-gourmet-burgers" data-name="Crispy Chicken Tender Salad" data-calories="1450" data-fat="97" data-carbs="86">
-              <td><%= check_box("puppy", "gooddog", {}, "yes", "no")   %>
+              <td><%=
+                    if @user.groups.find_by_id(group.id) != nil
+                      check_box_tag 'groups[]', group.id, true 
+                    else
+                      check_box_tag 'groups[]', group.id, false 
+                    end
+                  %>
               <td><%= link_to group.name, group %></td>
-              <td><%= group.lottery_date.to_s() %></td>
-              <td><%= group.dollar_amount %></td>
+              <td><%= group.lottery_date.strftime '%m/%d/%Y' %></td>
+              <td>$<%= group.dollar_amount %></td>
               <td>
                 <%= link_to 'Show', group %>
                 <%= link_to 'Edit', edit_group_path(group) %>

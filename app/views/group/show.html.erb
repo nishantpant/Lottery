@@ -39,6 +39,7 @@
       <table id="items" border="0">
         <thead>
           <tr>
+            <th></th>
             <th class="ascending" data-sort="data-name">Name</th>
             <th data-sort="data-restaurant">Email</th>
             <th>Action</th>
@@ -47,6 +48,7 @@
         <tbody>
           <% for user in @users %>
           <tr class="sortable_row" data-restaurant="red-robin-gourmet-burgers" data-name="Crispy Chicken Tender Salad" data-calories="1450" data-fat="97" data-carbs="86">
+              <td><%= check_box_tag 'Group Member', 'yes', true  %></td>
               <td><%= link_to h("#{user.first_name} #{user.last_name}"), user %></td>
               <td><%= user.email %></td>
               <td>

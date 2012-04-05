@@ -49,6 +49,20 @@ class UserController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        group_ids = params[:groups].collect {|id| id.to_i} if params[:groups]
+        
+        if group_ids
+          group_ids.each do |id|
+            r = @user.groups.find_by_id(id)
+            if r == nil
+              group = Group.find(id)
+              group.users << @user
+              group.users.save
+            end
+          end
+        end
+    
+        redirect_to :action => 'edit', :id => :@user.id 
         format.html { redirect_to @user, :notice => 'User was successfully updated.' }
         format.json { head :no_content }
       else
