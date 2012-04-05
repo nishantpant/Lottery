@@ -31,8 +31,8 @@ gem 'yaml_db'
 gem 'feedzirra'
 
 group :production do
-  gem "execjs"
-  gem "therubyracer"
+  gem 'execjs'
+#  gem 'therubyracer', :platforms => :ruby
 #gem 'therubyracer-heroku', :platform => :ruby
 end
 
