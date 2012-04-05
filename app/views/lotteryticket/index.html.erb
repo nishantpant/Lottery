@@ -1,26 +1,28 @@
-<h1>Lottery Tickets</h1>
+<div style="padding: 20px 80px;">
+  <h1>Lottery Tickets</h1>
 
-<div class="field">
-  <table id="items" border="0">
-    <tr>
-      <th>Num 1
-      <th>Num 2
-      <th>Num 3
-      <th>Num 4
-      <th>Num 5
-      <th>MegaPlier
-      <th>Winner ?
-    </tr>
-    <% for ticket in @lotterytickets %>
-    <tr>
-      <td><%= ticket.num1 %>
-      <td><%= ticket.num2 %>
-      <td><%= ticket.num3 %>
-      <td><%= ticket.num4 %>
-      <td><%= ticket.num5 %>
-      <td><%= ticket.megaplier %>
-      <td><%= @rss.summary  %>
-    </tr>
-    <%  end %>
-  </table>
+  <div class="field">
+    <table id="items" border="0">
+      <tr>
+        <th>Num 1
+        <th>Num 2
+        <th>Num 3
+        <th>Num 4
+        <th>Num 5
+        <th>MegaPlier
+        <th>Winner ?
+      </tr>
+      <% for ticket in @lotterytickets %>
+      <tr>
+        <td><%= ticket.num1 %>
+        <td><%= ticket.num2 %>
+        <td><%= ticket.num3 %>
+        <td><%= ticket.num4 %>
+        <td><%= ticket.num5 %>
+        <td><%= ticket.megaplier %>
+        <td><%= @rss.summary  %>
+      </tr>
+      <%  end %>
+    </table>
+  </div>
 </div>

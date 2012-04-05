@@ -84,7 +84,8 @@ class LotteryticketController < ApplicationController
     require 'feedzirra'
     feed = Feedzirra::Feed.fetch_and_parse("http://www.txlottery.org/export/sites/lottery/rss/tlc_latest.xml")
     feed.entries.each do |entry|  
-      if(entry.url == 'http://www.txlottery.org/export/sites/default/Games/Mega_Millions/')
+      if(entry.url == 'http://www.txlottery.org/export/sites/default/Games/Mega_Millions/' && 
+            entry.title.index("Mega Millions Winning Numbers for") != nil)
         return entry
       end  
     end  
