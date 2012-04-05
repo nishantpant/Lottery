@@ -131,6 +131,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  execjs
   feedzirra
   jquery-rails
   jquery-ui-rails

@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'yaml_db'
 gem 'feedzirra'
+gem 'execjs'
 
 group :production do
 #  gem 'therubyracer-heroku'
