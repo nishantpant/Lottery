@@ -24,13 +24,14 @@ end
 gem 'jquery-ui-rails'
 gem 'rails-dbi', :require => 'dbi'
 gem 'ruby-odbc'
-gem 'activerecord-sqlserver-adapter' 
+#gem 'activerecord-sqlserver-adapter' 
 gem 'jquery-rails'
 gem 'pg'
 gem 'yaml_db'
+gem 'feedzirra'
 
 group :production do
-  gem 'therubyracer-heroku', :platform => :ruby
+#  gem 'therubyracer-heroku', :platform => :ruby
 end
 
 # To use ActiveModel has_secure_password

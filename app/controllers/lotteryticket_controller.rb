@@ -72,7 +72,7 @@ class LotteryticketController < ApplicationController
 
   def index
     @lotterytickets = Lotteryticket.all
-    @lottoRSS = getLottoRss
+    @rss = getLottoRss
     
     respond_to do |format|
       format.html # index.html.erb
@@ -81,20 +81,13 @@ class LotteryticketController < ApplicationController
   end
   
   def getLottoRss
-      require 'rubygems'
-      require 'feed_tools'
-      feed = FeedTools::Feed.open('http://www.slashdot.org/index.rss')
+    require 'feedzirra'
+    feed = Feedzirra::Feed.fetch_and_parse("http://www.txlottery.org/export/sites/lottery/rss/tlc_latest.xml")
+    feed.entries.each do |entry|  
+      if(entry.url == 'http://www.txlottery.org/export/sites/default/Games/Mega_Millions/')
+        return entry
+      end  
+    end  
 
-      puts feed.title
-      puts feed.link
-      puts feed.description
-
-      for item in feed.items
-        puts item.title
-        puts item.link
-        puts item.content
-      end
-      
-      return feed
   end
 end
