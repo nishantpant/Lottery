@@ -31,7 +31,9 @@ gem 'yaml_db'
 gem 'feedzirra'
 
 group :production do
-  gem 'therubyracer-heroku', :platform => :ruby
+  gem "execjs"
+  gem "therubyracer"
+#gem 'therubyracer-heroku', :platform => :ruby
 end
 
 # To use ActiveModel has_secure_password
