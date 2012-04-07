@@ -1,5 +1,6 @@
 <div style="padding: 20px 80px;">
   <h1>Lottery Tickets</h1>
+  <h3>Last Winner: <%= @rss.summary %> </h3>
 
   <%
   
@@ -20,7 +21,6 @@
         <th>Num 4
         <th>Num 5
         <th>MegaPlier
-        <th>Winner ?
       </tr>
       <% for ticket in @lotterytickets %>
       <tr>
@@ -30,7 +30,6 @@
         <td id="num4"><%= ticket.num4 %>
         <td id="num5"><%= ticket.num5 %>
         <td id="megaplier"><%= ticket.megaplier %>
-        <td><%= @rss.summary  %>
       </tr>
       <%  end %>
     </table>
@@ -42,19 +41,32 @@ $(document).ready(function() {
   <% 
   for ticket in @lotterytickets 
     if(ticket.num1.to_s == arr[0])
-     %>  $('#num1').effect( "highlight", {color:"pink"}, 3000 ); <%
+     %>  
+         $('#num1').append('<img align="absmiddle" id="theImg" width="px" height="32px" src="../assets/smiley.png" />')
+         $('#num1').effect( "highlight", {color:"pink"}, 3000 ); 
+     <%
     end
     if(ticket.num2.to_s == arr[1])
-     %>  $('#num2').effect( "highlight", {color:"pink"}, 3000 ); <%
+     %>  
+         $('#num2').append('<img align="absmiddle" id="theImg" width="px" height="32px" src="../assets/smiley.png" />')
+         $('#num2').effect( "highlight", {color:"pink"}, 3000 ); 
+     <%
     end
     if(ticket.num3.to_s == arr[2])
-     %>  $('#num3').effect( "highlight", {color:"pink"}, 3000 ); <%
+     %>  
+         $('#num3').append('<img align="absmiddle" id="theImg" width="px" height="32px" src="../assets/smiley.png" />')
+         $('#num3').effect( "highlight", {color:"pink"}, 3000 ); 
+     <%
     end
     if(ticket.num4.to_s == arr[3])
-     %>  $('#num4').effect( "highlight", {color:"pink"}, 3000 ); <%
+     %>  
+         $('#num4').append('<img align="absmiddle" id="theImg" width="px" height="32px" src="../assets/smiley.png" />')
+         $('#num4').effect( "highlight", {color:"pink"}, 3000 ); <%
     end
     if(ticket.num5.to_s == arr[4])
-     %>  $('#num5').effect( "highlight", {color:"pink"}, 3000 ); <%
+     %>  
+         $('#num5').append('<img align="absmiddle" id="theImg" width="px" height="32px" src="../assets/smiley.png" />')
+         $('#num5').effect( "highlight", {color:"pink"}, 3000 ); <%
     end
     if(ticket.megaplier.to_s == arr[5])
      %>  $('#megaplier').effect( "highlight", {color:"pink"}, 3000 ); <%
