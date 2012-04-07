@@ -27,6 +27,8 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'yaml_db'
 gem 'feedzirra'
+gem 'thin' 
+gem "jquery-rails"
 
 group :production do
 #  gem 'therubyracer-heroku'

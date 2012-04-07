@@ -2,12 +2,15 @@
   <h1>Lottery Tickets</h1>
 
   <%
+  
     #11 - 35 - 38 - 41 - 52 MegaBall 40 Megaplier 4 
-    winnerStr = @rss.to_s
+    winnerStr = @rss.summary.to_s
     winnerStr = winnerStr.gsub("Megaplier" , "-")
     winnerStr = winnerStr.gsub("MegaBall" , "-")
+    winnerStr = winnerStr.gsub("\n" , "")
     arr = winnerStr.split(' - ')
   %>
+     
   <div class="field">
     <table id="items" border="0">
       <tr>
@@ -21,51 +24,28 @@
       </tr>
       <% for ticket in @lotterytickets %>
       <tr>
-        <td><%= 
-              if(ticket.num1 == arr[0])
-                "<font color='green'>#{ticket.num1}</font>"
-              else
-                ticket.num1
-              end
-            %>
-        <td><%= 
-              if(ticket.num2 == arr[1])
-                'hahaha'
-              else
-                ticket.num2
-              end
-            %>
-        <td><%= 
-              if(ticket.num3 == arr[2])
-                'hahaha'
-              else
-                ticket.num3
-              end
-            %>
-        <td><%= 
-              if(ticket.num4 == arr[3])
-                'hahaha'
-              else
-                ticket.num4
-              end
-            %>
-        <td><%= 
-              if(ticket.num5 == arr[4])
-                'hahaha'
-              else
-                ticket.num5
-              end
-            %>
-        <td><%= 
-              if(ticket.megaplier == arr[5])
-                'hahaha'
-              else
-                ticket.megaplier
-              end
-            %>
+        <td id="num1"><%= ticket.num1 %>
+        <td id="num2"><%= ticket.num2 %>
+        <td id="num3"><%= ticket.num3 %>
+        <td id="num4"><%= ticket.num4 %>
+        <td id="num5"><%= ticket.num5 %>
+        <td id="megaplier"><%= ticket.megaplier %>
         <td><%= @rss.summary  %>
       </tr>
       <%  end %>
     </table>
   </div>
 </div>
+
+<script lang='javascript'>
+$(document).ready(function() {
+  <% 
+  for ticket in @lotterytickets 
+    if(ticket.num1.to_s == arr[0])
+     %>  $('#num1').effect( "highlight", {color:"pink"}, 3000 ); <%
+    end
+  end 
+  %>
+})
+</script>
+
