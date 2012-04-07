@@ -1,0 +1,1 @@
+{"klass":"Taps::Push","database_url":"sqlite://db/dev.sqlite3","remote_url":"http://heroku:osui59a24am79x@taps19.heroku.com","session_uri":"/sessions/9211401445","stream_state":{},"completed_tables":[],"table_filter":null,"local_tables_info":{"lotterytickets":3,"schema_migrations":4,"groups_users":3,"users":3,"groups":4}}
