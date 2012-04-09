@@ -29,7 +29,8 @@ gem 'yaml_db'
 gem 'feedzirra'
 gem 'thin' 
 gem "jquery-rails"
-gem 'haml'
+gem 'authlogic'
+gem "rails3-generators"
 
 group :production do
 #  gem 'therubyracer-heroku'

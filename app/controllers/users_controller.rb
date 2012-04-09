@@ -1,6 +1,6 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = User.find((params[:id]))
     @groups = @user.groups
 
     respond_to do |format|
@@ -22,7 +22,7 @@ class UserController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = User.find((params[:id]))
     @groups = Group.all
   end
 
@@ -45,7 +45,7 @@ class UserController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @user = User.find(params[:id])
+    @user = User.find((params[:id]))
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -57,7 +57,7 @@ class UserController < ApplicationController
             if r == nil
               group = Group.find(id)
               group.users << @user
-              group.users.save
+              group.save
             end
           end
         end
@@ -75,7 +75,7 @@ class UserController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @users = User.find(params[:id])
+    @users = User.find((params[:id]))
     @users.destroy
 
     respond_to do |format|

@@ -24,13 +24,13 @@
               <a href="/">Home</a>
             </li>
             <li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12">
-                    <a href="/group/index">Pools</a>
+                    <a href="/groups">Pools</a>
             </li>
             <li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13">
-                <a href="/user/index">Members</a>
+                <a href="/users">Members</a>
             </li>
             <li id="menu-item-951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-951">
-                <a href="/user/index">My Account</a>
+                <a href="/users">My Account</a>
             </li>
           </ul>
       </div>    
@@ -59,13 +59,19 @@
               <a href="/">Home</a>
           </li>
           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12">
-                    <a href="/group/index">Pools</a>
+                    <a href="/groups">Pools</a>
           </li>
           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13">
-                <a href="/user/index">Members</a>
+                <a href="/users">Members</a>
           </li>
           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-951">
-                <a href="/user/index">My Account</a>
+              <% if current_user %>  
+                <%= link_to "Edit profile", edit_user_path(:current) %>  
+                <%= link_to "Logout", logout_path %>  
+              <% else %>  
+                <%= link_to "Register", new_user_path %>  
+                <%= link_to "Log in", login_path %>  
+              <% end %>
           </li>
         </ul>
       </div>    

@@ -1,41 +1,11 @@
 Lottery::Application.routes.draw do
-  get "lotteryticket/new"
+  match '/login', :to => 'sessions#new', :as => 'login'
+  match '/logout', :to => 'sessions#new', :as => 'logout'
 
-  get "lotteryticket/index"
-
-  get "lotteryticket/destroy"
-
-  get "lotteryticket/show"
-
-  get "lotteryticket/edit"
-
-  get "group/new"
-
-  get "group/index"
-
-  get "group/destroy"
-
-  get "group/show"
-
-  get "group/edit"
-
-  get "user/new"
-
-  get "user/edit"
-
-  get "user/destroy"
-
-  get "user/show"
-
-  get "user/index"
-
-  resources :lotteryticket
-  resources :group
-  resources :user do
-    resources :groups
-    resources :lotterytickets do
-    end
-  end
+  resources :user_sessions
+  resources :users
+  resources :lotterytickets
+  resources :groups
      
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -27,8 +27,9 @@
               <td>$<%= group.dollar_amount %></td>
               <td><%= group.lotterytickets.count %></td>
               <td>
-                <%= link_to 'Show', group %>
-                <%= link_to 'Edit', edit_group_path(group) %>
+                <%= link_to 'Show ', group %>|
+                <%= link_to 'Edit ', edit_group_path(group) %>|
+                <%= link_to 'New', new_group_path %>
               </td>
           </tr>
           <% end %>

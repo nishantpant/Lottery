@@ -5,6 +5,7 @@
         <tr>
           <th>Name</th>          
           <th>Email</th>          
+          <th>Action</th>          
         </tr>
       </thead>
       <tbody>
@@ -12,6 +13,11 @@
         <tr>
           <td><%= link_to h("#{user.first_name} #{user.last_name}"), user %></td>
           <td><%= user.email %></td>
+          <td>
+              <%= link_to 'Show ', user %>|
+              <%= link_to 'Edit ', edit_user_path(user) %>|
+              <%= link_to 'New', new_user_path %>
+          </td>
         </tr>
       <% end %>
       </tbody>

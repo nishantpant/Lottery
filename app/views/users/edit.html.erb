@@ -39,7 +39,6 @@
           <div class="actions" >
             <%= f.submit 'Save', :class => 'button' %>
           </div>
-        <% end %>
       </td>
       </td>
       <td valign="top">
@@ -65,7 +64,7 @@
                     end
                   %>
               <td><%= link_to group.name, group %></td>
-              <td><%= group.lottery_date.strftime '%m/%d/%Y' %></td>
+              <td><%= group.lottery_date %></td>
               <td>$<%= group.dollar_amount %></td>
               <td>
                 <%= link_to 'Show', group %>
@@ -84,4 +83,5 @@
       </td>
     </tr>
   </table>
+        <% end %>
 </div>
